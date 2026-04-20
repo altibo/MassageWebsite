@@ -305,7 +305,6 @@ h1{
 }
 .session-card.featured{
   border-color:rgba(210,174,108,.36);
-  transform:translateY(-8px);
 }
 .badge{
   display:inline-flex;
@@ -319,6 +318,12 @@ h1{
   letter-spacing:.12em;
   text-transform:uppercase;
   margin-bottom:18px;
+}
+.badge:empty{
+  visibility:hidden;
+}
+.badge-placeholder{
+  visibility:hidden;
 }
 .session-card h3{
   color:var(--text);
@@ -661,6 +666,7 @@ h1{
           <div class="session-meta">60 Minuten · 95 €</div>
         </article>
         <article class="session-card">
+          <div class="badge badge-placeholder" aria-hidden="true">Platzhalter</div>
           <h3>The Foundation</h3>
           <p>Ideal zum Ankommen. Wir lösen Spannungen entlang der Wirbelsäule und bringen dein System wieder mehr in Fluss.</p>
           <div class="session-meta">90 Minuten · 135 €</div>
@@ -751,8 +757,6 @@ h1{
   <div class="container footer-inner">
     <div>© 2026 Alexander Bolz</div>
     <div class="footer-links">
-      <a href="über_mich.html">Über mich</a>
-      <a href="ablauf.html">Ablauf</a>
       <a href="rechtliches.html">Impressum & Datenschutz</a>
     </div>
   </div>

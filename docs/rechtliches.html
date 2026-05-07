@@ -7,103 +7,106 @@
 <title>Rechtliches | ALTIBO</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --bg:#0a0d10;
-  --panel:#171d23;
-  --line:rgba(210,174,108,.18);
-  --accent:#d2ae6c;
-  --accent-strong:#f1d39a;
-  --text:#f4efe7;
-  --muted:#b8b1a7;
+  --bg:#FDE9D2;
+  --bg-soft:#F5DDC0;
+  --panel:#FFF7EF;
+  --text:#4B3A2F;
+  --muted:#7A685B;
+  --accent:#C97B63;
+  --accent-soft:#D7B98E;
+  --line:rgba(90,60,40,.10);
+  --shadow:0 12px 40px rgba(120,90,70,.08);
 }
 *{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-  font-family:'Inter',sans-serif;
-  background:
-    radial-gradient(circle at top,#1a2128 0%,rgba(10,13,16,0) 34%),
-    linear-gradient(180deg,#0a0d10 0%,#0d1217 100%);
+  font-family:'Manrope',sans-serif;
+  background:var(--bg);
   color:var(--text);
   line-height:1.75;
+  overflow-x:hidden;
 }
-a{color:inherit}
-.container{width:min(900px,calc(100% - 40px));margin:0 auto}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,calc(100% - 40px));margin:0 auto}
 .site-nav{
   position:sticky;
   top:0;
-  z-index:20;
-  backdrop-filter:blur(14px);
-  background:rgba(10,13,16,.8);
-  border-bottom:1px solid rgba(255,255,255,.05);
+  z-index:100;
+  backdrop-filter:blur(12px);
+  background:rgba(253,233,210,.72);
+  border-bottom:1px solid var(--line);
 }
 .nav-inner{
+  min-height:82px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:24px;
-  min-height:76px;
 }
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
-.brand img{width:34px;height:34px;opacity:.9}
-.brand-mark{font-size:.76rem;letter-spacing:.34em;text-transform:uppercase;color:var(--accent)}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-symbol{width:42px;opacity:.9}
+.brand-mark{font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
 .brand-name{font-size:.92rem;color:var(--muted)}
-.nav-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.nav-links{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .nav-links a{
-  text-decoration:none;
-  color:var(--muted);
-  font-size:.92rem;
-  padding:10px 14px;
+  padding:10px 16px;
   border-radius:999px;
-  transition:.25s ease;
+  color:var(--muted);
+  transition:.2s ease;
 }
 .nav-links a:hover,
 .nav-links a.active{
+  background:rgba(201,123,99,.08);
   color:var(--text);
-  background:rgba(210,174,108,.12);
 }
-.nav-cta{
-  border:1px solid var(--line);
-  color:var(--accent-strong) !important;
-}
+.nav-cta{background:var(--accent);color:white !important}
+
 .section{padding:78px 0 110px}
 h1,h2,h3{
-  font-family:'Playfair Display',serif;
-  font-weight:400;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
   line-height:1.1;
 }
-h1{
-  font-size:clamp(2.8rem,6vw,4.5rem);
-  margin-bottom:20px;
-}
-h2{
-  font-size:2rem;
-  margin:42px 0 18px;
-  color:var(--accent);
-}
-h3{
-  font-size:1.2rem;
-  margin:24px 0 10px;
-}
+h1{font-size:clamp(2.8rem,6vw,4.5rem);margin-bottom:20px}
+h2{font-size:2rem;margin:42px 0 18px;color:var(--accent)}
+h3{font-size:1.2rem;margin:24px 0 10px}
 p,li{color:var(--muted);margin-bottom:14px}
 .content{
-  background:linear-gradient(180deg,rgba(23,29,35,.95),rgba(15,19,24,.98));
-  border:1px solid rgba(255,255,255,.06);
+  background:rgba(255,255,255,.48);
+  backdrop-filter:blur(8px);
+  border:1px solid var(--line);
   border-radius:30px;
   padding:34px;
+  box-shadow:var(--shadow);
 }
-.footer{padding:0 0 110px}
+
+.footer{padding:50px 0}
 .footer-inner{
   display:flex;
   justify-content:space-between;
-  gap:20px;
   align-items:center;
-  border-top:1px solid rgba(255,255,255,.06);
-  padding-top:28px;
+  gap:20px;
+  border-top:1px solid var(--line);
+  padding-top:24px;
   color:var(--muted);
 }
-.footer-links{display:flex;gap:18px;flex-wrap:wrap}
-.footer a{text-decoration:none;color:var(--muted)}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+
+.footer-logos{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:24px;
+  padding:20px 0;
+}
+.footer-logos a{display:block;transition:opacity .2s ease}
+.footer-logos a:hover{opacity:.7}
+.footer-logos img{height:96px;width:auto}
+
 @media (max-width: 900px){
   .container{width:min(100%,calc(100% - 28px))}
 }
@@ -134,23 +137,16 @@ p,li{color:var(--muted);margin-bottom:14px}
   h1{font-size:clamp(3rem,11vw,4rem)}
   h2{font-size:clamp(2rem,8vw,2.7rem)}
   h3{font-size:1.35rem}
-  p,
-  li{font-size:1.04rem}
+  p,li{font-size:1.04rem}
   .content{padding:28px 22px}
   .section{padding:54px 0 90px}
-  .footer{padding:0 0 40px}
-  .footer-inner{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+  .footer{padding:28px 0 40px}
+  .footer-inner{flex-direction:column;align-items:flex-start}
 }
 @media (max-width: 520px){
   .container{width:min(100%,calc(100% - 22px))}
   .nav-links{grid-template-columns:1fr}
-  .content{
-    border-radius:22px;
-    padding:22px 18px;
-  }
+  .content{border-radius:22px;padding:22px 18px}
 }
 </style>
 </head>
@@ -158,7 +154,7 @@ p,li{color:var(--muted);margin-bottom:14px}
 <header class="site-nav">
   <div class="container nav-inner">
     <a class="brand" href="index.html">
-      <img src="logo.png" alt="ALTIBO Logo" />
+      <img class="brand-symbol" src="img/circle.png" alt="ALTIBO Symbol" />
       <div>
         <div class="brand-mark">ALTIBO</div>
         <div class="brand-name">Alexander Bolz</div>
@@ -215,10 +211,20 @@ p,li{color:var(--muted);margin-bottom:14px}
 </main>
 
 <footer class="footer">
-  <div class="container footer-inner">
-    <div>© 2026 Alexander Bolz</div>
-    <div class="footer-links">
-      <a href="rechtliches.html">Impressum & Datenschutz</a>
+  <div class="container">
+    <div class="footer-logos">
+      <a href="https://www.tantrabyfreya.com/" target="_blank" rel="noopener">
+        <img src="img/logo_path_of_transformation.png" alt="Path of Transformation" />
+      </a>
+      <a href="https://www.tantrabyfreya.com/" target="_blank" rel="noopener">
+        <img src="img/logo_freya.png" alt="Tantra by Freya" />
+      </a>
+    </div>
+    <div class="footer-inner">
+      <div>© 2026 Alexander Bolz</div>
+      <div class="footer-links">
+        <a href="rechtliches.html">Impressum & Datenschutz</a>
+      </div>
     </div>
   </div>
 </footer>

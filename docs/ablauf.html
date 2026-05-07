@@ -7,105 +7,94 @@
 <title>Ablauf | ALTIBO</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --bg:#0a0d10;
-  --panel:#171d23;
-  --line:rgba(210,174,108,.18);
-  --accent:#d2ae6c;
-  --accent-strong:#f1d39a;
-  --text:#f4efe7;
-  --muted:#b8b1a7;
-  --shadow:0 28px 80px rgba(0,0,0,.28);
+  --bg:#FDE9D2;
+  --bg-soft:#F5DDC0;
+  --panel:#FFF7EF;
+  --text:#4B3A2F;
+  --muted:#7A685B;
+  --accent:#C97B63;
+  --accent-soft:#D7B98E;
+  --sage:#8D9B83;
+  --line:rgba(90,60,40,.10);
+  --shadow:0 12px 40px rgba(120,90,70,.08);
 }
 *{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-  font-family:'Inter',sans-serif;
-  background:
-    radial-gradient(circle at top,#1a2128 0%,rgba(10,13,16,0) 34%),
-    linear-gradient(180deg,#0a0d10 0%,#0d1217 100%);
+  font-family:'Manrope',sans-serif;
+  background:var(--bg);
   color:var(--text);
   line-height:1.75;
+  overflow-x:hidden;
 }
-a{color:inherit}
-.container{width:min(980px,calc(100% - 40px));margin:0 auto}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,calc(100% - 40px));margin:0 auto}
 .site-nav{
   position:sticky;
   top:0;
-  z-index:20;
-  backdrop-filter:blur(14px);
-  background:rgba(10,13,16,.8);
-  border-bottom:1px solid rgba(255,255,255,.05);
+  z-index:100;
+  backdrop-filter:blur(12px);
+  background:rgba(253,233,210,.72);
+  border-bottom:1px solid var(--line);
 }
 .nav-inner{
+  min-height:82px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:24px;
-  min-height:76px;
 }
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
-.brand img{width:34px;height:34px;opacity:.9}
-.brand-mark{font-size:.76rem;letter-spacing:.34em;text-transform:uppercase;color:var(--accent)}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-symbol{width:42px;opacity:.9}
+.brand-mark{font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
 .brand-name{font-size:.92rem;color:var(--muted)}
-.nav-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.nav-links{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .nav-links a{
-  text-decoration:none;
-  color:var(--muted);
-  font-size:.92rem;
-  padding:10px 14px;
+  padding:10px 16px;
   border-radius:999px;
-  transition:.25s ease;
+  color:var(--muted);
+  transition:.2s ease;
 }
 .nav-links a:hover,
 .nav-links a.active{
+  background:rgba(201,123,99,.08);
   color:var(--text);
-  background:rgba(210,174,108,.12);
 }
-.nav-cta{
-  border:1px solid var(--line);
-  color:var(--accent-strong) !important;
-}
-.hero{
-  padding:84px 0 44px;
-  text-align:center;
-}
+.nav-cta{background:var(--accent);color:white !important}
+
+.hero{padding:84px 0 44px;text-align:center}
 .eyebrow{
   display:inline-block;
-  margin-bottom:18px;
+  margin-bottom:22px;
   color:var(--accent);
-  letter-spacing:.28em;
-  text-transform:uppercase;
-  font-size:.78rem;
+  font-size:.9rem;
+  letter-spacing:.12em;
 }
 h1,h2,h3{
-  font-family:'Playfair Display',serif;
-  font-weight:400;
-  line-height:1.1;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  line-height:1.05;
 }
-h1{
-  font-size:clamp(2.8rem,6vw,4.7rem);
-  margin-bottom:18px;
-}
-.hero p{
-  max-width:720px;
-  margin:0 auto;
-  color:var(--muted);
-}
+h1{font-size:clamp(2.8rem,6vw,4.7rem);margin-bottom:18px}
+.hero p{max-width:720px;margin:0 auto;color:var(--muted)}
+
 .section{padding:52px 0 78px}
-.timeline{
-  display:grid;
-  gap:22px;
-}
+.section.alt{background:rgba(255,255,255,.24)}
+
+.timeline{display:grid;gap:22px}
 .step{
   display:grid;
   grid-template-columns:72px 1fr;
   gap:20px;
   padding:28px;
   border-radius:28px;
-  background:linear-gradient(180deg,rgba(23,29,35,.95),rgba(15,19,24,.98));
-  border:1px solid rgba(255,255,255,.06);
+  background:rgba(255,255,255,.48);
+  backdrop-filter:blur(8px);
+  border:1px solid var(--line);
   box-shadow:var(--shadow);
 }
 .step-number{
@@ -114,18 +103,19 @@ h1{
   border-radius:50%;
   display:grid;
   place-items:center;
-  background:rgba(210,174,108,.12);
-  color:var(--accent-strong);
+  background:rgba(201,123,99,.12);
+  color:var(--accent);
   font-weight:600;
   font-size:1.05rem;
 }
+.step h2{font-size:1.8rem;margin-bottom:8px}
 .step p{color:var(--muted);margin-top:10px}
 .note{
   margin-top:28px;
   padding:24px 28px;
   border-radius:24px;
   border:1px solid var(--line);
-  background:rgba(255,255,255,.02);
+  background:rgba(255,255,255,.32);
   color:var(--muted);
 }
 .actions{
@@ -139,31 +129,39 @@ h1{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:54px;
+  min-height:56px;
   padding:0 24px;
   border-radius:999px;
-  border:1px solid var(--line);
-  text-decoration:none;
-  transition:.25s ease;
+  border:1px solid transparent;
+  transition:.2s ease;
 }
-.button-primary{
-  background:linear-gradient(135deg,var(--accent) 0%,var(--accent-strong) 100%);
-  color:#14110c;
-  border-color:transparent;
-}
-.button-secondary{color:var(--text)}
-.footer{padding:36px 0 110px}
+.button-primary{background:var(--accent);color:white}
+.button-primary:hover{background:#B66A54}
+.button-secondary{border:1px solid var(--line);background:rgba(255,255,255,.4)}
+
+.footer{padding:50px 0}
 .footer-inner{
   display:flex;
   justify-content:space-between;
-  gap:20px;
   align-items:center;
-  border-top:1px solid rgba(255,255,255,.06);
-  padding-top:28px;
+  gap:20px;
+  border-top:1px solid var(--line);
+  padding-top:24px;
   color:var(--muted);
 }
-.footer-links{display:flex;gap:18px;flex-wrap:wrap}
-.footer a{text-decoration:none;color:var(--muted)}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+
+.footer-logos{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:24px;
+  padding:20px 0;
+}
+.footer-logos a{display:block;transition:opacity .2s ease}
+.footer-logos a:hover{opacity:.7}
+.footer-logos img{height:96px;width:auto}
+
 .sticky-cta{
   position:fixed;
   left:16px;
@@ -179,12 +177,12 @@ h1{
   display:flex;
   align-items:center;
   justify-content:center;
-  text-decoration:none;
-  background:linear-gradient(135deg,var(--accent) 0%,var(--accent-strong) 100%);
-  color:#14110c;
+  background:var(--accent);
+  color:white;
   font-weight:600;
-  box-shadow:0 22px 44px rgba(0,0,0,.34);
+  box-shadow:0 12px 32px rgba(120,90,70,.18);
 }
+
 @media (max-width: 900px){
   .container{width:min(100%,calc(100% - 28px))}
   .section{padding:48px 0 64px}
@@ -213,15 +211,11 @@ h1{
     text-align:center;
     justify-content:center;
   }
-  .nav-cta{
-    grid-column:1 / -1;
-  }
+  .nav-cta{grid-column:1 / -1}
   h1{font-size:clamp(3rem,11vw,4rem)}
-  h2{font-size:clamp(2rem,8vw,2.7rem)}
+  h2{font-size:clamp(1.6rem,8vw,2.2rem)}
   .eyebrow{font-size:.9rem}
-  .hero p,
-  .step p,
-  .note{font-size:1.06rem}
+  .hero p,.step p,.note{font-size:1.06rem}
   .step{
     grid-template-columns:1fr;
     padding:26px 22px;
@@ -235,15 +229,8 @@ h1{
     right:14px;
     bottom:calc(env(safe-area-inset-bottom,0px) + 12px);
   }
-  .sticky-cta a{
-    min-height:54px;
-    font-size:.98rem;
-    letter-spacing:.01em;
-  }
-  .footer-inner{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+  .sticky-cta a{min-height:54px;font-size:.98rem;letter-spacing:.01em}
+  .footer-inner{flex-direction:column;align-items:flex-start}
   .sticky-cta{display:block}
 }
 @media (max-width: 520px){
@@ -251,11 +238,7 @@ h1{
   .nav-links{grid-template-columns:1fr}
   .nav-cta{grid-column:auto}
   .section{padding:38px 0 52px}
-  .step,
-  .note{
-    border-radius:22px;
-    padding:22px 18px;
-  }
+  .step,.note{border-radius:22px;padding:22px 18px}
 }
 </style>
 </head>
@@ -263,7 +246,7 @@ h1{
 <header class="site-nav">
   <div class="container nav-inner">
     <a class="brand" href="index.html">
-      <img src="logo.png" alt="ALTIBO Logo" />
+      <img class="brand-symbol" src="img/circle.png" alt="ALTIBO Symbol" />
       <div>
         <div class="brand-mark">ALTIBO</div>
         <div class="brand-name">Alexander Bolz</div>
@@ -329,10 +312,20 @@ h1{
 </main>
 
 <footer class="footer">
-  <div class="container footer-inner">
-    <div>© 2026 Alexander Bolz</div>
-    <div class="footer-links">
-      <a href="rechtliches.html">Impressum & Datenschutz</a>
+  <div class="container">
+    <div class="footer-logos">
+      <a href="https://www.tantrabyfreya.com/" target="_blank" rel="noopener">
+        <img src="img/logo_path_of_transformation.png" alt="Path of Transformation" />
+      </a>
+      <a href="https://www.tantrabyfreya.com/" target="_blank" rel="noopener">
+        <img src="img/logo_freya.png" alt="Tantra by Freya" />
+      </a>
+    </div>
+    <div class="footer-inner">
+      <div>© 2026 Alexander Bolz</div>
+      <div class="footer-links">
+        <a href="rechtliches.html">Impressum & Datenschutz</a>
+      </div>
     </div>
   </div>
 </footer>

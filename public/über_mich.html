@@ -106,6 +106,7 @@ h1{font-size:clamp(2.8rem,6vw,4.8rem);margin-bottom:18px}
 .section.alt{background:rgba(255,255,255,.24)}
 .grid{display:grid;gap:22px}
 .two-col{grid-template-columns:1fr 1fr}
+.three-col{grid-template-columns:repeat(3,1fr)}
 .content-card,.values-card{padding:30px}
 .content-card p,.values-card p{color:var(--muted)}
 .content-card p + p,.values-card p + p{margin-top:14px}
@@ -113,6 +114,12 @@ h1{font-size:clamp(2.8rem,6vw,4.8rem);margin-bottom:18px}
 .section-header h2{font-size:clamp(2.1rem,4.8vw,3.1rem);margin-bottom:14px}
 .section-header p{color:var(--muted)}
 .value-title{color:var(--accent);margin-bottom:10px;font-size:1.38rem}
+.qualification-provider{margin-top:14px;color:var(--muted);font-size:.94rem}
+.qualification-provider a{
+  color:var(--accent);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
 .quote{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(1.6rem,3vw,2.4rem);
@@ -185,7 +192,7 @@ h1{font-size:clamp(2.8rem,6vw,4.8rem);margin-bottom:18px}
 
 @media (max-width: 900px){
   .container{width:min(100%,calc(100% - 28px))}
-  .hero-grid,.two-col{grid-template-columns:1fr}
+  .hero-grid,.two-col,.three-col{grid-template-columns:1fr}
   .hero{padding:58px 0 46px}
   .section{padding:64px 0}
 }
@@ -263,7 +270,7 @@ h1{font-size:clamp(2.8rem,6vw,4.8rem);margin-bottom:18px}
       <a href="index.html">Start</a>
       <a class="active" href="über_mich.html">Über mich</a>
       <a href="ablauf.html">Ablauf</a>
-      <a class="nav-cta" href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20bin%20auf%20deine%20Seite%20gestoßen%20und%20interessiere%20mich%20für%20eine%20Session.%20Kannst%20du%20mir%20helfen%20herauszufinden,%20was%20für%20mich%20passt%3F">Erstkontakt</a>
+      <a class="nav-cta" href="index.html#termin">Termin buchen</a>
     </nav>
   </div>
 </header>
@@ -326,6 +333,36 @@ h1{font-size:clamp(2.8rem,6vw,4.8rem);margin-bottom:18px}
   <section class="section alt">
     <div class="container">
       <div class="section-header">
+        <span class="eyebrow">Zertifizierte Qualifikationen</span>
+        <h2>Fundiert ausgebildet für achtsame Körper- und Prozessarbeit.</h2>
+        <p>Meine Arbeit basiert auf abgeschlossenen Ausbildungen in tantrischer Massage, Meditation, Achtsamkeit und Prozessbegleitung.</p>
+      </div>
+
+      <div class="grid three-col">
+        <article class="values-card">
+          <h3 class="value-title">Professional Tantra Massage Training TantraSOMA™</h3>
+          <p>Zertifizierte Ausbildung in professioneller tantrischer Massage, bewusster Berührung sowie dem achtsamen Umgang mit Grenzen und Sicherheit.</p>
+          <p class="qualification-provider">Bei <a href="https://www.tantrabyfreya.com/professional-tantra-massage-training-tantrasoma/" target="_blank" rel="noopener">Tantra by Freya</a></p>
+        </article>
+
+        <article class="values-card">
+          <h3 class="value-title">Meditationslehrer- und Achtsamkeitstrainerausbildung</h3>
+          <p>Zertifizierte Ausbildung zur fundierten Vermittlung verschiedener Meditationspraktiken und Achtsamkeitsübungen.</p>
+          <p class="qualification-provider">Bei <a href="https://www.diegluecksbringer.com/project/meditationslehrerausbildung/" target="_blank" rel="noopener">Die Glücksbringer</a> in Würzburg</p>
+        </article>
+
+        <article class="values-card">
+          <h3 class="value-title">Jaartraining tot Proces Begeleider</h3>
+          <p>Zertifizierte, einjährige und praxisorientierte Ausbildung in der Begleitung persönlicher und spiritueller Prozesse.</p>
+          <p class="qualification-provider">Bei <a href="https://www.proceswerk.nl/" target="_blank" rel="noopener">Centrum voor Proceswerk</a> mit Joop van der Hagen in den Niederlanden</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
         <h2>Was mich geprägt hat</h2>
         <p>Über viele Jahre habe ich mich intensiv mit Meditation, Körperarbeit, Prozessbegleitung und verschiedenen Formen innerer Entwicklung beschäftigt.</p>
       </div>
@@ -349,7 +386,7 @@ h1{font-size:clamp(2.8rem,6vw,4.8rem);margin-bottom:18px}
         <h2>Wenn du nicht nur lesen, sondern erleben möchtest, wie sich dieser Raum anfühlt, melde dich.</h2>
         <p>Auf der Ablauf-Seite siehst du genauer, wie eine Session aufgebaut ist und wie ich Sicherheit und Klarheit im Prozess halte.</p>
         <a class="button button-secondary" href="ablauf.html">Ablauf ansehen</a>
-        <a class="button button-primary" href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20möchte%20gern%20mehr%20über%20deine%20Arbeit%20erfahren%20und%20herausfinden,%20welche%20Session%20für%20mich%20passt.">Erstgespräch starten</a>
+        <a class="button button-primary" href="index.html#termin">Termin buchen</a>
       </div>
     </div>
   </section>
@@ -368,6 +405,7 @@ h1{font-size:clamp(2.8rem,6vw,4.8rem);margin-bottom:18px}
     <div class="footer-inner">
       <div>© 2026 Alexander Bolz</div>
       <div class="footer-links">
+        <a href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20habe%20noch%20eine%20Frage%20zu%20einer%20Session." target="_blank" rel="noopener">Fragen per WhatsApp</a>
         <a href="rechtliches.html">Impressum & Datenschutz</a>
       </div>
     </div>
@@ -375,7 +413,7 @@ h1{font-size:clamp(2.8rem,6vw,4.8rem);margin-bottom:18px}
 </footer>
 
 <div class="sticky-cta">
-  <a href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20möchte%20gern%20mehr%20über%20deine%20Arbeit%20erfahren%20und%20herausfinden,%20welche%20Session%20für%20mich%20passt.">Erstgespräch starten</a>
+  <a href="index.html#termin">Termin buchen</a>
 </div>
 </body>
 </html>

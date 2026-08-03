@@ -344,8 +344,45 @@ h1{
   margin-top:24px;
   padding-top:18px;
   border-top:1px solid var(--line);
+}
+
+.session-option{
+  padding:18px 0;
+}
+
+.session-option + .session-option{
+  border-top:1px solid var(--line);
+}
+
+.session-option-header{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:20px;
   color:var(--accent);
+}
+
+.session-duration{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.65rem;
   font-weight:600;
+}
+
+.session-price{
+  font-size:1.15rem;
+  font-weight:600;
+  white-space:nowrap;
+}
+
+.session-details{
+  margin-top:8px;
+  font-size:.94rem;
+}
+
+.session-note{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:.9rem;
 }
 
 .flow-number{
@@ -393,6 +430,33 @@ h1{
   bottom:-120px;
   width:300px;
   opacity:.16;
+}
+
+.booking-intro{
+  margin-bottom:34px;
+}
+
+.calendly-wrap{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+  margin:0 auto;
+  overflow:hidden;
+  border-radius:24px;
+  background:var(--panel);
+}
+
+.booking-help{
+  position:relative;
+  z-index:2;
+  margin-top:24px !important;
+  font-size:.92rem;
+}
+
+.booking-help a{
+  color:var(--accent);
+  text-decoration:underline;
+  text-underline-offset:3px;
 }
 
 .footer{
@@ -513,6 +577,12 @@ h1{
     width:100%;
   }
 
+  .session-option-header{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:2px;
+  }
+
   .nav-links{
     grid-template-columns:1fr;
   }
@@ -546,9 +616,9 @@ h1{
 
       <a
         class="nav-cta"
-        href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20interessiere%20mich%20für%20eine%20Session."
+        href="#termin"
       >
-        Erstkontakt
+        Termin buchen
       </a>
 
     </nav>
@@ -594,9 +664,9 @@ h1{
 
           <a
             class="button button-primary"
-            href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20interessiere%20mich%20für%20eine%20Session."
+            href="#termin"
           >
-            Erstgespräch vereinbaren
+            Termin buchen
           </a>
 
           <a
@@ -740,12 +810,22 @@ h1{
           </p>
 
           <div class="session-meta">
-            2 Stunden · 160 €
-          </div>
+            <div class="session-option">
+              <div class="session-option-header">
+                <span class="session-duration">120 Minuten</span>
+                <span class="session-price">140 €</span>
+              </div>
+              <p class="session-details">Gesamtzeit inklusive Ankommen, Vorgespräch, Körperarbeit, Nachspüren und Abschluss.</p>
+            </div>
 
-          <p style="margin-top:14px; font-size:.95rem;">
-            Jede weitere Stunde · 60 €
-          </p>
+            <div class="session-option">
+              <div class="session-option-header">
+                <span class="session-duration">180 Minuten</span>
+                <span class="session-price">200 €</span>
+              </div>
+              <p class="session-note">Nach Absprache</p>
+            </div>
+          </div>
 
         </article>
 
@@ -755,7 +835,7 @@ h1{
 
   </section>
 
-  <section class="section cta">
+  <section id="termin" class="section cta">
 
     <div class="container">
 
@@ -767,31 +847,17 @@ h1{
           alt=""
         />
 
-        <span class="eyebrow">
-          Erstkontakt
-        </span>
-
-        <h2>
-          Wenn du spürst,
-          dass dein Körper Raum braucht,
-          melde dich.
-        </h2>
-
-        <p>
-          In einem kurzen Gespräch finden wir gemeinsam heraus,
-          welche Session gerade stimmig für dich ist.
-        </p>
-
-        <div class="hero-actions" style="justify-content:center">
-
-          <a
-            class="button button-primary"
-            href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20interessiere%20mich%20für%20eine%20Session."
-          >
-            Jetzt anfragen
-          </a>
-
+        <div class="booking-intro">
+          <span class="eyebrow">Direkt buchen</span>
+          <h2>Wähle deinen Termin.</h2>
+          <p>Such dir einfach einen passenden freien Termin aus. Deine Buchung wird direkt bestätigt.</p>
         </div>
+
+        <div class="calendly-wrap">
+          <div class="calendly-inline-widget" data-url="https://calendly.com/alexander-bolz-posteo/30min?hide_event_type_details=1&background_color=fde9d2&amp;text_color=4b3a2f&amp;primary_color=c97b63" style="min-width:320px;height:700px;"></div>
+        </div>
+
+        <p class="booking-help">Du hast vorab noch eine Frage? <a href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20habe%20noch%20eine%20Frage%20zu%20einer%20Session." target="_blank" rel="noopener">Schreib mir über WhatsApp.</a></p>
 
       </div>
 
@@ -822,6 +888,10 @@ h1{
 
       <div class="footer-links">
 
+        <a href="https://wa.me/4915562862516?text=Hallo%20Alexander,%20ich%20habe%20noch%20eine%20Frage%20zu%20einer%20Session." target="_blank" rel="noopener">
+          Fragen per WhatsApp
+        </a>
+
         <a href="rechtliches.html">
           Impressum & Datenschutz
         </a>
@@ -833,6 +903,8 @@ h1{
   </div>
 
 </footer>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 </body>
 </html>
